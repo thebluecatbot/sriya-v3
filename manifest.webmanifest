@@ -1,0 +1,26 @@
+{
+  "name": "sriya ✿",
+  "short_name": "sriya ✿",
+  "description": "your private home base — non-negotiables, tasks, scenarios, journal, time tracker, books, people.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#FFA8C9",
+  "background_color": "#FFF0F6",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path fill='%23E6629A' d='M16 27.5C16 27.5 4.5 20 4.5 12C4.5 8 7.5 5 11 5C13 5 14.8 6 16 7.8C17.2 6 19 5 21 5C24.5 5 27.5 8 27.5 12C27.5 20 16 27.5 16 27.5Z'/></svg>",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23FFA8C9'/><path fill='%23E6629A' d='M16 27.5C16 27.5 4.5 20 4.5 12C4.5 8 7.5 5 11 5C13 5 14.8 6 16 7.8C17.2 6 19 5 21 5C24.5 5 27.5 8 27.5 12C27.5 20 16 27.5 16 27.5Z'/></svg>",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

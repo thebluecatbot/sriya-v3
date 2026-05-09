@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>clearing cache…</title>
+  <style>
+    body { font-family: sans-serif; display:flex; align-items:center; justify-content:center;
+           height:100vh; margin:0; background:#FFF0F6; color:#8B2E5C; flex-direction:column; gap:16px; }
+    p { font-size:1.1rem; }
+  </style>
+</head>
+<body>
+  <p>✿ clearing cache…</p>
+  <script>
+    Promise.all([
+      navigator.serviceWorker.getRegistrations().then(function(regs){
+        return Promise.all(regs.map(function(r){ return r.unregister(); }));
+      }),
+      caches.keys().then(function(keys){
+        return Promise.all(keys.map(function(k){ return caches.delete(k); }));
+      })
+    ]).then(function(){
+      document.querySelector('p').textContent = '✿ done! loading app…';
+      setTimeout(function(){ window.location.replace('/'); }, 800);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#FFA8C9" />
+  <title>sriya ✿</title>
+
+  <!-- Phosphor Icons -->
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css" />
+
+  <!-- Fraunces (display) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600;1,9..144,700&family=Inter:wght@400;500;600;700&display=swap" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Favicon (pink heart) -->
+  <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path fill='%23E6629A' d='M16 27.5C16 27.5 4.5 20 4.5 12C4.5 8 7.5 5 11 5C13 5 14.8 6 16 7.8C17.2 6 19 5 21 5C24.5 5 27.5 8 27.5 12C27.5 20 16 27.5 16 27.5Z'/></svg>" />
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path fill='%23E6629A' d='M16 27.5C16 27.5 4.5 20 4.5 12C4.5 8 7.5 5 11 5C13 5 14.8 6 16 7.8C17.2 6 19 5 21 5C24.5 5 27.5 8 27.5 12C27.5 20 16 27.5 16 27.5Z'/></svg>" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="sriya ✿" />
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main">
+      <section class="view active" data-view="home"     id="view-home"></section>
+      <section class="view"        data-view="tasks"    id="view-tasks"></section>
+      <section class="view"        data-view="timer"    id="view-timer"></section>
+      <section class="view"        data-view="chat"     id="view-chat"></section>
+      <section class="view"        data-view="me"       id="view-me"></section>
+      <section class="view"        data-view="playbook" id="view-playbook"></section>
+      <section class="view"        data-view="journal"  id="view-journal"></section>
+      <section class="view"        data-view="upsc"     id="view-upsc"></section>
+      <section class="view"        data-view="mtp"      id="view-mtp"></section>
+      <section class="view"        data-view="substack" id="view-substack"></section>
+      <section class="view"        data-view="books"    id="view-books"></section>
+      <section class="view"        data-view="exercise" id="view-exercise"></section>
+      <section class="view"        data-view="travel"   id="view-travel"></section>
+      <section class="view"        data-view="people"   id="view-people"></section>
+    </main>
+  </div>
+
+  <nav class="tabbar" id="tabbar"></nav>
+
+  <!-- Flow overlay -->
+  <div class="flow-overlay" id="flow-overlay" aria-hidden="true"></div>
+
+  <!-- Emoji picker overlay -->
+  <div class="emoji-picker-overlay" id="emoji-picker-overlay" aria-hidden="true"></div>
+
+  <!-- Slide-up sheet overlay (task edit, person edit, etc.) -->
+  <div class="sheet-overlay" id="sheet-overlay" aria-hidden="true"></div>
+
+  <!-- More-drawer overlay -->
+  <div class="sheet-overlay" id="more-overlay" aria-hidden="true"></div>
+
+  <!-- Toast container -->
+  <div class="toast-wrap" id="toasts"></div>
+
+  <!-- Auto-clear stale SW cache on version bump -->
+  <script>
+  (function(){
+    var V = 'sriya-sw-cleared-2026-05-09a';
+    if (!localStorage.getItem(V) && 'serviceWorker' in navigator) {
+      localStorage.setItem(V, '1');
+      navigator.serviceWorker.getRegistrations().then(function(regs){
+        return Promise.all(regs.map(function(r){ return r.unregister(); }));
+      }).then(function(){
+        return caches.keys();
+      }).then(function(keys){
+        return Promise.all(keys.map(function(k){ return caches.delete(k); }));
+      }).then(function(){ location.reload(); });
+    }
+  })();
+  </script>
+  <script src="data.js"></script>
+  <script src="upsc_data.js"></script>
+  <script src="icons.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

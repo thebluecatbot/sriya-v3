@@ -69,7 +69,7 @@
   <!-- Auto-clear stale SW cache on version bump -->
   <script>
   (function(){
-    var V = 'sriya-sw-cleared-2026-05-09b';
+    var V = 'sriya-sw-cleared-2026-05-09a';
     if (!localStorage.getItem(V) && 'serviceWorker' in navigator) {
       localStorage.setItem(V, '1');
       navigator.serviceWorker.getRegistrations().then(function(regs){
